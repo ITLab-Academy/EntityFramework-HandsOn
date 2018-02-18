@@ -23,6 +23,11 @@ namespace AppLocadora.Migrations
                 new Genero { Id = 1, Nome = "Ação" },
                 new Genero { Id = 2, Nome = "Policial" },
                 new Genero { Id = 3, Nome = "Terror" });
+
+            context.CategoriasFilmes.AddOrUpdate(t => t.Id,
+                new CategoriaFilme { Id = (byte)Categoria.Lancamento, Nome = "Lançamento", Cor = "#000000", Preco = 15 },
+                new CategoriaFilme { Id = (byte)Categoria.Recente, Nome = "Recente", Cor = "#FFFFFF", Preco = 8 },
+                new CategoriaFilme { Id = (byte)Categoria.Classico, Nome = "Clássico", Cor = "#CECECE", Preco = 3.5M });
         }
     }
 }
